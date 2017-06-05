@@ -1,0 +1,38 @@
+Feature : Title
+[ Description, no keywords ]
+
+	# Common Setup Steps for all Scenarios ; normally only context steps
+	[ Background : ]
+		[ Given ]			Given it is a weekday
+		[ And | Given ]		etc.
+		[ But | Given ]
+		[ * ]
+	
+	# A feature must have at least 1 Scenario and, or Scenario Outline
+	Scenario : Name
+	[ Description, no keywords ]
+	# Context
+		[ Given ]			Given a call into the company's general phone number
+		[ And | Given ]		etc.
+		[ But | Given ]
+		[ * ]
+	# Event
+		[ When ]			When a Client is calling
+		[ * ]
+	# Outcome/s / Test/s
+		[ Then ] 			Then route the call to a Broker agent
+		[ And | Then ]		etc.
+		[ * ]
+
+	# A Scenario Outline has variables in the steps followed by a table of values
+	Scenario Outline : Name
+	[ Description, no keywords ]
+	# Step/s with Variable/s
+	# Context : 			Given a call into the company phone lines
+	# Event : 				When a <variable1> is calling
+	# Outcome / Test : 		Then route the call to a <variable2> agent
+		Examples :
+			# Datatable with Variable/s as Header/setup
+			[ | variable1 | variable2 | etc. |
+			  | var1data1 | var2data1 | etc. | 
+			  | var1data2 | var2data2 | etc. | ]
